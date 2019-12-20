@@ -10,13 +10,44 @@ import com.company.Search.*;
 
 public class Account {
     public User User;
+    public String Username;
+    public String pswd;
 
     public Account(){
         //empty constructor
     }
-    public User LogIn( String UserName, String Password) {
-        return null;
+    public void LogIn( String UserName, String Password) {
+        //1-check existance of this username if yes ... check if password right
+        if(CheckUserName(UserName))
+        {
+            if(Password.equals(pswd))
+            {
+                System.out.println("Logged Successfully");
+            }
+            else
+            {
+                System.out.println("InValid Password !");
+            }
+        }
     }
+
+    //Search For this username in user database.
+    public boolean CheckUserName(String UserName){
+        int counter = 0;
+        for (User o : UserDB.SystemUsers) {
+            if (! (o.UserName.equals(UserName))) {
+                continue;
+            }
+            else
+            {
+                Username = UserName;
+                pswd = o.Password;
+            }
+        }
+        return false;
+    }
+
+
     public Account ManageAccount() {
         return null;
     }
