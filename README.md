@@ -1,4 +1,4 @@
-# Socail Media Back-End API
+# Socail Network Back-End API
 
 ## Over View
   This is a simple social media back-end API which provides the main components needed to create a social network app/website
