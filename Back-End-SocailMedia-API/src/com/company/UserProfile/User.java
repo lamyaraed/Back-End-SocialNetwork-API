@@ -21,13 +21,17 @@ public class User {
     public String Gender;
     public int Age;
     public String Country;
-    public enum AccountType{Regular, Premium};
+
+    public enum AccountType {Regular, Premium};
+
     public File ProfilePicture;
     public ArrayList<User> Friends;
+    public ArrayList<User> FriendRequests = new ArrayList<>();
 
-    public User(){}
-    public User(User ob)
-    {
+    public User() {
+    }
+
+    public User(User ob) {
         this.UserName = ob.UserName;
         this.FirstName = ob.FirstName;
         this.LastName = ob.LastName;
@@ -37,6 +41,7 @@ public class User {
         this.Country = ob.Country;
         this.Gender = ob.Gender;
     }
+
 
     public User(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
         this.UserName = UserName;
@@ -48,15 +53,6 @@ public class User {
         Country = country;
         Gender = gender;
         //AccountType = UserAccount.User.AccountType.isValidEnum(MyEnum.class, Account_type);
+
     }
-
-    public void AddFriends(User user) {}
-
-    public Post SharePost(Post post) {
-        return null;
-    }
-
-    public void MakeComment(Post post,  String comment) {}
-
-    public void MakeLike(Post post) {}
 }
