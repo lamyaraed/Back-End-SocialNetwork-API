@@ -54,6 +54,7 @@ public class User {
     }
 
 
+
     public void AddFriends(User user) {
         if(FriendRequests.contains(user))
             Friends.add(user);
@@ -62,4 +63,10 @@ public class User {
     public Post SharePost(Post post) {
         return null;
     }
+
+
+    public void MakeComment(Post post,  String comment) {}
+    public void MakeLike(Post post) {}
+
 }
+

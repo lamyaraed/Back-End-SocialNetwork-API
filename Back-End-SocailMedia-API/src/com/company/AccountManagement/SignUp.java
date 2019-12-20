@@ -8,12 +8,15 @@ import com.company.PageManagemet.*;
 import com.company.Post.*;
 import com.company.Search.*;
 
+import java.util.Scanner;
+
 
 public class SignUp {
     public String UserName;
     public String UserPassword;
     public String UserEmail;
     public Account UserAccount;
+    Scanner input = new Scanner(System.in);
     public boolean flag = true;
 
     public SignUp(){
@@ -29,6 +32,8 @@ public class SignUp {
             UserAccount = new Account();
             UserAccount.setUserData(username,Firstname,LastName,email,password,age,gender,country,Account_type);
         }
+        else
+            System.out.println("Invalid inputs, try again later");
     }
 
     public Account Activate() {
@@ -36,11 +41,11 @@ public class SignUp {
     }
 
     public void VerifyAccount() {
-        if(!CheckEmail())
+        if (!CheckEmail())
             flag = false;
-        else if(!CheckUserName())
+        else if (!CheckUserName())
             flag = false;
-        else if(!CheckPassword())
+        else if (!CheckPassword())
             flag = false;
         else
             flag = true;
@@ -49,38 +54,69 @@ public class SignUp {
     //Search For this Email in user database.
     public boolean CheckEmail()
     {
-        for (User o : UserDB.SystemUsers)
-        {
-            if (o.Email.equals(UserEmail))
-            {
-                System.out.println("This Email Already Exists !");
-                return false;
+        boolean emailFlag = false;
+        for (int i = 0; i < 3; i++) {
+            for (User o : UserDB.SystemUsers) {
+                if (o.Email.equals(UserEmail)) {
+                    emailFlag = false;
+                    System.out.println("This Email Already Exists!");
+                    System.out.println("Re-Enter a new Email");
+                    UserEmail = input.nextLine();
+                    break;
+                }
+                emailFlag = true;
             }
         }
-        return true;
+        if (emailFlag == false)
+            return false;
+        else
+            return true;
     }
 
+
     //Search For this username in user database.
-    public boolean CheckUserName(){
-        for (User o : UserDB.SystemUsers) {
-            if (o.UserName.equals(UserName)) {
-                System.out.println("The UserName You Entered Already Exists!");
-                return false;
+    public boolean CheckUserName() {
+        boolean nameFlag = false;
+        for (int j = 0; j < 3; j++) {
+            for (User o : UserDB.SystemUsers) {
+                if (o.UserName.equals(UserName)) {
+                    nameFlag = false;
+                    System.out.println("The UserName You entered already exists!");
+                    System.out.println("Re-Enter a new Username");
+                    UserName = input.nextLine();
+                    break;
+                }
+                nameFlag = true;
             }
         }
-        return true;
+        if(nameFlag == false)
+            return false;
+        else
+            return true;
     }
 
     public boolean CheckPassword() {
-        if(UserName.equals(UserPassword)) {
-            System.out.println("Your UserName should not be your Password!");
-            return false;
+        boolean pswdFlag = false;
+        for (int j = 0; j < 3; j++) {
+            if (UserName.equals(UserPassword)) {
+                pswdFlag = false;
+                System.out.println("Your UserName should not be your Password!");
+                System.out.println("Re-Enter a new password");
+                UserPassword = input.nextLine();
+                break;
+            }
+            else if (UserPassword.length() < 8) {
+                pswdFlag = false;
+                System.out.println("Password should contain more than 8 char");
+                System.out.println("Re-Enter a new password");
+                UserPassword = input.nextLine();
+                break;
+            }
+            pswdFlag = true;
         }
-        else if(UserPassword.length()<8) {
-            System.out.println("Password should contain more than 8 char");
+        if(pswdFlag == false)
             return false;
-        }
-        return true;
+        else
+            return true;
     }
-
 }
