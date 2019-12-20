@@ -23,10 +23,13 @@ public class User {
     public int Age;
     public File ProfilePicture;
     public ArrayList<User> Friends;
+    public ArrayList<User> FriendRequests;
 
     public User(String FirstName, String LastName, String UserName, String Email, String Password, String Gender, int Age) {
     }
     public void AddFriends(User user) {
+        if(FriendRequests.contains(user))
+            Friends.add(user);
     }
     public Post SharePost(Post post) {
         return null;
