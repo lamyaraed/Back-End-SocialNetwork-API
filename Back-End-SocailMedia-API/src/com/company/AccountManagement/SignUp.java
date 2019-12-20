@@ -71,7 +71,7 @@ public class SignUp {
     }
 
     public boolean CheckPassword() {
-        if(UserName == UserPassword) {
+        if(UserName.equals(UserPassword)) {
             System.out.println("Your UserName should not be your Password!");
             return false;
         }

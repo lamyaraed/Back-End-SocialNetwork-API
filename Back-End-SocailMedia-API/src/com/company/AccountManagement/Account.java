@@ -33,7 +33,6 @@ public class Account {
 
     //Search For this username in user database.
     public boolean CheckUserName(String UserName){
-        int counter = 0;
         for (User o : UserDB.SystemUsers) {
             if (! (o.UserName.equals(UserName))) {
                 continue;
@@ -42,6 +41,7 @@ public class Account {
             {
                 Username = UserName;
                 pswd = o.Password;
+                return true;
             }
         }
         return false;
