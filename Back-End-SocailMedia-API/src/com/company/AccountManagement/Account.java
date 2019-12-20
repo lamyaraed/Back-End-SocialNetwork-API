@@ -22,29 +22,36 @@ public class Account {
 
     public void LogIn( String UserName, String Password) {
         //1-check existance of this username if yes ... check if password right
-        if(CheckUserName(UserName))
+        for (int i = 0; i < 3; i++)
         {
-            if(Password.equals(pswd))
+            if (CheckUserName(UserName))
             {
-                System.out.println("Logged Successfully");
+                if (Password.equals(pswd))
+                {
+                    System.out.println("Logged Successfully");
+                    break;
+                }
+                else {
+                    System.out.println("InValid Password !");
+                    System.out.println("Re-Enter Password : ");
+                    Password = input.next();
+                }
             }
             else
             {
-                System.out.println("InValid Password !");
-                for (int i = 0; i < 3; i++) {
-                    System.out.println("R2-Enter Your Password : ");
-                    Password = input.next();
-                    if(Password.equals(pswd))
-                    {
-                        System.out.println("Logged Successfully");
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
+                System.out.println("InValid UserName !");
+                System.out.println("Re-Enter Your Data : ");
+                UserName = input.next();
+                System.out.println("Enter Your Password : ");
+                Password = input.next();
+            }
+            if(i >= 2)
+            {
+                System.out.println("InValid Data Try Again Later...");
+                break;
             }
         }
+
     }
 
     //Search For this username in user database.
