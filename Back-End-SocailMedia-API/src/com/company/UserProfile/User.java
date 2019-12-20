@@ -12,7 +12,6 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class User {
-
     public String FirstName;
     public String LastName;
     public String UserName;
@@ -42,7 +41,6 @@ public class User {
         this.Gender = ob.Gender;
     }
 
-
     public User(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
         this.UserName = UserName;
         FirstName = Firstname;
@@ -53,6 +51,15 @@ public class User {
         Country = country;
         Gender = gender;
         //AccountType = UserAccount.User.AccountType.isValidEnum(MyEnum.class, Account_type);
+    }
 
+
+    public void AddFriends(User user) {
+        if(FriendRequests.contains(user))
+            Friends.add(user);
+    }
+
+    public Post SharePost(Post post) {
+        return null;
     }
 }
