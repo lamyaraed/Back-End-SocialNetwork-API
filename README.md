@@ -26,7 +26,7 @@ current posts in specific hashtag and sort these posts according to the most imp
 
 
 
-##Authors
+## Authors
 * **Lamya Raed** [lamyaraed] (https://github.com/lamyaraed)
 * **Mariam Makram** [mariammakram] (https://github.com/mariammakram)
 * **Aya Amr** [ayaamr11] (https://github.com/ayaamr11)
