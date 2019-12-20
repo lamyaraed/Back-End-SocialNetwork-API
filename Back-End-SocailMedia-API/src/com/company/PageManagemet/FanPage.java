@@ -27,5 +27,6 @@ public class FanPage {
     }
     public void ManageFanPageReq() {
     }
-
+    public boolean checkUsersValidation(String username){return false;}
+    public boolean checkPageNameValidation(String pageName){return false;}
 }
