@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 
 public class UserDB {
+    public static ArrayList<User> SystemUsers;
 
-    public ArrayList<User> SystemUsers;
     public UserDB(User user) {
         SystemUsers.add(user);
     }

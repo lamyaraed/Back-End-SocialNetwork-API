@@ -21,19 +21,27 @@ public class User {
     public String Password;
     public String Gender;
     public int Age;
+    public String Country;
+    public enum AccountType{Regular, Premium};
     public File ProfilePicture;
     public ArrayList<User> Friends;
 
-    public User(String FirstName, String LastName, String UserName, String Email, String Password, String Gender, int Age) {
+
+    public User(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
+        UserName = UserName;
+        FirstName = Firstname;
+        LastName = LastName;
+        Email = UserEmail;
+        Password = UserPassword;
+        Age = age;
+        Country = country;
+        Gender = gender;
+        //AccountType = UserAccount.User.AccountType.isValidEnum(MyEnum.class, Account_type);
     }
-    public void AddFriends(User user) {
-    }
+    public void AddFriends(User user) {}
     public Post SharePost(Post post) {
         return null;
     }
-    public void MakeComment(Post post,  String comment) {
-    }
-    public void MakeLike(Post post) {
-    }
-
+    public void MakeComment(Post post,  String comment) {}
+    public void MakeLike(Post post) {}
 }
