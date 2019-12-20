@@ -5,9 +5,9 @@
 ## Table of contents
 * [General info](#general-info)
 * [Implementation](#implementation)
-* [Project Document] (#project-document)
-* [Project Diagrams] (#project-Diagrams)
-* [Authors] (#authors)
+* [Project Document](#project-document)
+* [Project Diagrams](#project-Diagrams)
+* [Authors](#authors)
 
 ## General info
   The purpose of this project (Social Network Back-End API) is to create an extendable and reusable platform which will allow other social
