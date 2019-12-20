@@ -49,15 +49,16 @@ public class SignUp {
     //Search For this Email in user database.
     public boolean CheckEmail()
     {
-        for (User o : UserDB.SystemUsers) {
-            if (o.Email.equals(UserEmail)) {
+        for (User o : UserDB.SystemUsers)
+        {
+            if (o.Email.equals(UserEmail))
+            {
                 System.out.println("This Email Already Exists !");
                 return false;
             }
         }
         return true;
     }
-
 
     //Search For this username in user database.
     public boolean CheckUserName(){

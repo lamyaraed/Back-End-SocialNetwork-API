@@ -11,7 +11,6 @@ import com.company.Search.*;
 import java.io.File;
 import java.util.ArrayList;
 
-
 public class User {
 
     public String FirstName;
@@ -50,10 +49,14 @@ public class User {
         Gender = gender;
         //AccountType = UserAccount.User.AccountType.isValidEnum(MyEnum.class, Account_type);
     }
+
     public void AddFriends(User user) {}
+
     public Post SharePost(Post post) {
         return null;
     }
+
     public void MakeComment(Post post,  String comment) {}
+
     public void MakeLike(Post post) {}
 }
