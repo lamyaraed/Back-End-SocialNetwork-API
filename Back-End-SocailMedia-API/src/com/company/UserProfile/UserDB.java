@@ -12,11 +12,12 @@ import java.util.ArrayList;
 
 
 public class UserDB {
+
     public static ArrayList<User> SystemUsers = new ArrayList<>();
 
     public UserDB(User user) {
        User ob = new User(user);
-     SystemUsers.add(ob);
+       SystemUsers.add(ob);
     }
 
 }
