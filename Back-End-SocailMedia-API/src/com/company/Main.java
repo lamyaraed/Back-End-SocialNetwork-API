@@ -25,6 +25,11 @@ public class Main {
         String gender;
         String Account_Type;
 
+        User ob = new User("FatmaAshraf" , "Fatma" , "Ashraf" , "Fatma.ashrafgmail.com" ,
+                "fatma264541" , 16 , "Egypt" , "Female","Regular");
+
+
+
         Scanner c = new Scanner(System.in);
 
         System.out.println("Hello, Enter Your Data :");
@@ -47,7 +52,19 @@ public class Main {
         System.out.println("acc type");
         Account_Type = c.nextLine();
 
+
+
         SignUp newAcc  = new SignUp();
         newAcc.getPersonalInfo(UserName,Firstname,LastName,UserEmail,UserPassword,age,country,gender,Account_Type);
+
+
+        System.out.println("LogIN : ");
+        System.out.println("Hello, Enter Your Data :");
+        System.out.println("username");
+        UserName = c.nextLine();
+
+        System.out.println("pswd");
+        UserPassword = c.nextLine();
+
     }
 }
