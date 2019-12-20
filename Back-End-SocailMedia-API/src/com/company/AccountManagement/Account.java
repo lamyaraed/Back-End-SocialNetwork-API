@@ -8,14 +8,18 @@ import com.company.PageManagemet.*;
 import com.company.Post.*;
 import com.company.Search.*;
 
+import java.util.Scanner;
+
 public class Account {
     public User User;
     public String Username;
     public String pswd;
+    Scanner input  = new Scanner(System.in);
 
     public Account(){
         //empty constructor
     }
+
     public void LogIn( String UserName, String Password) {
         //1-check existance of this username if yes ... check if password right
         if(CheckUserName(UserName))
@@ -27,6 +31,18 @@ public class Account {
             else
             {
                 System.out.println("InValid Password !");
+                for (int i = 0; i < 3; i++) {
+                    System.out.println("R2-Enter Your Password : ");
+                    Password = input.next();
+                    if(Password.equals(pswd))
+                    {
+                        System.out.println("Logged Successfully");
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
             }
         }
     }

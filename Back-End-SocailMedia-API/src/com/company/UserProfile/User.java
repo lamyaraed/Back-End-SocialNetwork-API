@@ -22,9 +22,9 @@ public class User {
     public String Gender;
     public int Age;
     public String Country;
-//    public enum AccountType{Regular, Premium};
-//    public File ProfilePicture;
-//    public ArrayList<User> Friends;
+    public enum AccountType{Regular, Premium};
+    public File ProfilePicture;
+    public ArrayList<User> Friends;
 
     public User(){}
     public User(User ob)
