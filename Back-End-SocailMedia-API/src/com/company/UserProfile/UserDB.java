@@ -10,10 +10,11 @@ import com.company.Search.*;
 
 import java.util.ArrayList;
 
+// todo UserDB --> UpdateUserProfilePicture(Image) , UpdateUserName(UserName) ,  UpdateAge(Integer) , [Valid]UpdatePassword(Password)
 
 public class UserDB {
 
-    public ArrayList<User> SystemUsers;
+    public static ArrayList<User> SystemUsers = new ArrayList<>();
     public UserDB(User user) {
         SystemUsers.add(user);
     }

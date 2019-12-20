@@ -15,17 +15,23 @@ public class Search {
 
     public Search(String search) {
     }
-    public ArrayList<Post> SearchPost(String post) { return null;
+
+    public ArrayList<Post> SearchPost(String post) {
+        return null;
     }
+
     public boolean isHashtag(String hashtag) {
         return false;
     }
+
     public ArrayList<User> FindUser(String name) {
         return null;
     }
+
     public ArrayList<Group> FindGroup(String name) {
         return null;
     }
+
     public ArrayList<FanPage> FindFanPage(String name) {
         return null;
     }
