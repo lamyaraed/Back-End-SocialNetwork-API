@@ -46,6 +46,7 @@ public class SignUp {
             flag = true;
     }
 
+    //Search For this Email in user database.
     public boolean CheckEmail()
     {
         for (User o : UserDB.SystemUsers) {
@@ -57,6 +58,8 @@ public class SignUp {
         return true;
     }
 
+
+    //Search For this username in user database.
     public boolean CheckUserName(){
         for (User o : UserDB.SystemUsers) {
             if (o.UserName.equals(UserName)) {

@@ -41,9 +41,9 @@ public class Main {
         System.out.println("age");
         age = c.nextInt();
         System.out.println("country");
-        country = c.nextLine();
+        country = c.next();
         System.out.println("gender");
-        gender = c.nextLine();
+        gender = c.next();
         System.out.println("acc type");
         Account_Type = c.nextLine();
 
