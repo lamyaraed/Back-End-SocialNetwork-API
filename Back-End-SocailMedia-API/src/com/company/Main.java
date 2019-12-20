@@ -21,7 +21,7 @@ public class Main {
         User ob2 = new User("Mariam" , "Makram" , "mariammakram" , "mariammakram@gmail.com" ,
                 "mariam123" , "Female", 16);
 
-        test.SystemUsers.add(ob2);
+        UserDB.SystemUsers.add(ob2);
 
         ob.AddFriends(ob2);
 

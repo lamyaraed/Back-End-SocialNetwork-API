@@ -32,5 +32,6 @@ public class Group {
     }
     public void ManageGroupReq() {
     }
+    public boolean checkUsersValidation(String username){return false;}
 
 }

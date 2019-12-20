@@ -40,7 +40,7 @@ public class User {
         this.Age = Age;
     }
 
-    /* If Logged in user wants to accept friend request*/
+    /* If Logged in user wants to Send friend request*/
     public void AddFriends(User user) {
         if(!user.FriendRequests.contains(this)) {
             user.FriendRequests.add(this);
