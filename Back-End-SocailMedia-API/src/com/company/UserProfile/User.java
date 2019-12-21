@@ -42,17 +42,16 @@ public class User {
 
     /* If Logged in user wants to Send friend request*/
     public void AddFriends(User user) {
-        if(!user.FriendRequests.contains(this)) {
+        if (!user.FriendRequests.contains(this)) {
             user.FriendRequests.add(this);
             System.out.println("Your request has been sent successfully");
-        }
-        else
+        } else
             System.out.println("Request is sent before");
     }
 
     /* If Logged in user wants to accept friend request*/
-    public void acceptRequests(String username){
-        if(!FriendRequests.isEmpty()) {
+    public void acceptRequests(String username) {
+        if (!FriendRequests.isEmpty()) {
             for (User user : UserDB.SystemUsers) {
                 if (user.UserName.equals(username) && FriendRequests.contains(user)) {
                     Friends.add(user);
@@ -61,11 +60,11 @@ public class User {
                     break;
                 }
             }
-            if (accepted)
-                System.out.println("Friend request accepted successfully.");
-            else
-                System.out.println("Friend request doesn't exist");
         }
+        if (accepted)
+            System.out.println("Friend request accepted successfully.");
+        else
+            System.out.println("Friend request doesn't exist");
     }
 
     public Post SharePost(Post post) {
