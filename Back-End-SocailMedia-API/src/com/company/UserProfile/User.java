@@ -63,8 +63,6 @@ public class User {
         this.Account_Type = AccountType.valueOf(AccType);
         System.out.println(Account_Type);
     }
-////heyyyyyyy
-    ///heyy
 
     /* If Logged in user wants to accept friend request*/
     public void AddFriends(User user) {
