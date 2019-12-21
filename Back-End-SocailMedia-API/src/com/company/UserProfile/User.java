@@ -64,6 +64,7 @@ public class User {
         System.out.println(Account_Type);
     }
 ////heyyyyyyy
+    ///heyy
 
     /* If Logged in user wants to accept friend request*/
     public void AddFriends(User user) {
