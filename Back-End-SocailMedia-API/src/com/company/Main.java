@@ -11,6 +11,9 @@ import sun.rmi.runtime.Log;
 
 import java.util.Scanner;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class Main {
 
@@ -26,8 +29,8 @@ public class Main {
         String gender;
         String Account_Type;
 
-        User ob = new User("FatmaAshraf" , "Fatma" , "Ashraf" , "Fatma.ashrafgmail.com" ,
-                "fatma264541" , 16 , "Egypt" , "Female","Regular");
+        Scanner scan = new Scanner(System.in);
+        User ob = new User("Fatma", "Ashraf", "FatmaAshraf", "Fatma.ashrafgmail.com", "fatma264541",16, "Egypt", "Female", "Regular");
 
 
         UserDB test = new UserDB(ob);
@@ -59,6 +62,33 @@ public class Main {
 //        SignUp newAcc  = new SignUp();
 //        newAcc.getPersonalInfo(UserName,Firstname,LastName,UserEmail,UserPassword,age,country,gender,Account_Type);
 //
+        User ob2 = new User("Mariam", "Makram", "mariammakram", "mariammakram@gmail.com",
+                "mariam123", 16, "Egypt", "Female", "Regular");
+
+        User ob3 = new User("Mariam", "Makram", "mariammakram2", "mariammakram@gmail.com",
+                "mariam123",16, "Egypt", "Female", "Regular");
+
+        UserDB.SystemUsers.add(ob2);
+        UserDB.SystemUsers.add(ob3);
+
+        Search sc = new Search();
+        ArrayList<User> foundUsers = sc.FindUser("Mariam Makram");
+        if (!foundUsers.isEmpty()) {
+            if (foundUsers.size() == 1)
+                ob.AddFriends(foundUsers.get(0));
+            else {
+                byte i = 1, choice;
+                for (User foundUser : foundUsers) {
+                    System.out.println(i + ") " + foundUser.FirstName + " " + foundUser.LastName + "   Username: " + foundUser.UserName);
+                    i++;
+                }
+                System.out.println("Choose the user you want");
+                choice = (byte) scan.nextInt();
+                ob.AddFriends(foundUsers.get(choice-1));
+                System.out.println(choice);
+
+            }
+        }
 
         System.out.println("LogIN : ");
         System.out.println("Hello, Enter Your Data :");
