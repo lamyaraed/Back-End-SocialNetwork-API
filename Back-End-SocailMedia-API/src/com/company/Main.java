@@ -51,23 +51,24 @@ public class Main {
 //        country = c.next();
 //        System.out.println("gender");
 //        gender = c.next();
-//        System.out.println("acc type");
+//        System.out.println("acc type {Regular,Premium}");
 //        Account_Type = c.next();
 //
 //
 //
-//        SignUp newAcc  = new SignUp();
-//        newAcc.getPersonalInfo(UserName,Firstname,LastName,UserEmail,UserPassword,age,country,gender,Account_Type);
+        SignUp newAcc  = new SignUp();
+        newAcc.getPersonalInfo("lamyaraed","lamya","raed","lamyaraed24gmail","123456789",20,"Egypt",
+                "female","Premium");
 //
 
-        System.out.println("LogIN : ");
+        /*System.out.println("LogIN : ");
         System.out.println("Hello, Enter Your Data :");
         System.out.println("username");
         UserName = c.next();
         System.out.println("pswd");
         UserPassword = c.next();
         Account tst = new Account();
-        tst.LogIn(UserName , UserPassword);
+        tst.LogIn(UserName , UserPassword);*/
 
     }
 }
