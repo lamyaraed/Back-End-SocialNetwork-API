@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Search {
 
     public Search(String search) {
+        
     }
 
     public Search() {
