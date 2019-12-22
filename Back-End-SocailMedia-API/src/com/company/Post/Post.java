@@ -24,7 +24,7 @@ public class Post {
     public Post CreatePost() {
         return null;
     }
-    public int GetNumofLikes() {
+    public int GetNumOfLikes() {
         return 0;
     }
     public int NumberOfShares() {

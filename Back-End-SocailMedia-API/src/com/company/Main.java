@@ -44,8 +44,6 @@ public class Main {
                 System.out.println("Choose the user you want");
                 choice = (byte) scan.nextInt();
                 ob.AddFriends(foundUsers.get(choice-1));
-                System.out.println(choice);
-
             }
         }
 
