@@ -21,13 +21,14 @@ public class Account {
         //empty constructor
     }
 
-    public void LogIn(String UserName, String Password) {
+    public String LogIn(String UserName, String Password) {
         //1-check existance of this username if yes ... check if password right
         for (int i = 0; i < 3; i++) {
             if (CheckUserName(UserName)) {
                 if (Password.equals(pswd)) {
                     System.out.println("Logged Successfully");
-                    break;
+                    return "Done!!";
+                 //   break;
                 } else {
                     System.out.println("InValid Password !");
                     System.out.println("Re-Enter Password : ");
@@ -45,6 +46,7 @@ public class Account {
                 break;
             }
         }
+        return "Error";
 
     }
 
