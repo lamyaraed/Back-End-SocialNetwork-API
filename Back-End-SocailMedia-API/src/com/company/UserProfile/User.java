@@ -48,6 +48,7 @@ public class User {
         this.Age = ob.Age;
         this.Country = ob.Country;
         this.Gender = ob.Gender;
+        UserDB.SystemUsers.add(this);
     }
 
     public User(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
@@ -59,6 +60,7 @@ public class User {
         Age = age;
         Country = country;
         Gender = gender;
+
         //AccountType = UserAccount.User.AccountType.isValidEnum(MyEnum.class, Account_type);
        if(Account_Type=="Premium") {
     	   for (User user : UserDB.SystemUsers) {
@@ -67,8 +69,7 @@ public class User {
               }
     	   }
         }
-        	
-      
+        UserDB.SystemUsers.add(this);
     }
 
 
@@ -85,21 +86,26 @@ public class User {
     }
 
     /* If Logged in user wants to accept friend request*/
-    public void acceptRequests(String username) {
+    public boolean acceptRequests(String username) {
         if (!FriendRequests.isEmpty()) {
             for (User user : UserDB.SystemUsers) {
                 if (user.UserName.equals(username) && FriendRequests.contains(user)) {
                     Friends.add(user);
+                    user.Friends.add(this);
                     FriendRequests.remove(user);
                     accepted = true;
                     break;
                 }
             }
         }
-        if (accepted)
+        if (accepted) {
             System.out.println("Friend request accepted successfully.");
-        else
+            return true;
+        }
+        else {
             System.out.println("Friend request doesn't exist");
+            return false;
+        }
     }
 
     public Post SharePost(Post post) {
