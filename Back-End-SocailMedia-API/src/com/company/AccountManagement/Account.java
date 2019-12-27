@@ -7,13 +7,14 @@ import com.company.Inbox.*;
 import com.company.PageManagemet.*;
 import com.company.Post.*;
 import com.company.Search.*;
+import java.util.ArrayList;
 
 import java.util.Scanner;
 
 public class Account {
-    public User User;
-    public String Username;
-    public String pswd;
+    public  User User;
+    public static String Username;
+    public static String pswd;
     Scanner input = new Scanner(System.in);
 
     public Account() {
@@ -66,11 +67,20 @@ public class Account {
         return null;
     }
 
-    public void UpgradeRegisterationPremiumReq() {
-        PremiumAccount prem;
+    public  void UpgradeRegisterationPremiumReq() {
+        PremiumAccount prem = null;
+        prem.Upgrade();
+      //  permiumusers.add(User);
+        for (User user : UserDB.SystemUsers) {
+            if (user.UserName.equals(Username) ) {
+            	 User.permiumusers.add(user);
+           }
+   }
     }
 
     public void setUserData(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
         //User = new User(UserName,Firstname,LastName,UserEmail,UserPassword,age,country,gender,Account_Type);
+//    	if(Account_Type.equals("Premium"))
+//    		PremiumAccount.Upgrade();
     }
 }
