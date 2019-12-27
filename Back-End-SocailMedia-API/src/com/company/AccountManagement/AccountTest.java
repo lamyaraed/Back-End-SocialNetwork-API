@@ -13,8 +13,8 @@ class AccountTest {
         String username = "Mariam";
         String Password = "mariam123";
         Account test = new Account();
-       String s=  test.LogIn(username,Password);
-       UserDB ob = new UserDB();
+        String s=  test.LogIn(username,Password);
+        UserDB ob = new UserDB();
         assertEquals("Done!!",s);
 
     }

@@ -77,12 +77,6 @@ public class Account {
             if (user.UserName.equals(Username) ) {
             	 User.permiumusers.add(user);
            }
-   }
-    }
-
-    public void setUserData(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
-        //User = new User(UserName,Firstname,LastName,UserEmail,UserPassword,age,country,gender,Account_Type);
-//    	if(Account_Type.equals("Premium"))
-//    		PremiumAccount.Upgrade();
+        }
     }
 }
