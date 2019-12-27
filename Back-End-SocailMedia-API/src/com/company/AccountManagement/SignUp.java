@@ -30,7 +30,7 @@ public class SignUp {
         VerifyAccount();
         if (flag){
             UserAccount = new Account();
-            UserAccount.setUserData(username,Firstname,LastName,email,password,age,gender,country,Account_type);
+            UserAccount.User = new User(username,Firstname,LastName,email,password,age,gender,country,Account_type);
         }
         else
             System.out.println("Invalid inputs, try again later");
@@ -39,7 +39,7 @@ public class SignUp {
     public Account Activate() {
         return null;
     }
-
+    //verify user data
     public void VerifyAccount() {
         if (!CheckEmail())
             flag = false;
@@ -50,10 +50,8 @@ public class SignUp {
         else
             flag = true;
     }
-
     //Search For this Email in user database.
-    public boolean CheckEmail()
-    {
+    public boolean CheckEmail() {
         boolean emailFlag = false;
         for (int i = 0; i < 3; i++) {
             for (User o : UserDB.SystemUsers) {
@@ -72,8 +70,6 @@ public class SignUp {
         else
             return true;
     }
-
-
     //Search For this username in user database.
     public boolean CheckUserName() {
         boolean nameFlag = false;
@@ -94,7 +90,6 @@ public class SignUp {
         else
             return true;
     }
-
     public boolean CheckPassword() {
         boolean pswdFlag = false;
         for (int j = 0; j < 3; j++) {

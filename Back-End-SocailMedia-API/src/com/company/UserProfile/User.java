@@ -23,9 +23,14 @@ public class User {
     public String Gender;
     public int Age;
     public String Country;
+<<<<<<< Updated upstream
     public AccountType Account_Type;
 
 
+=======
+    public String Account_Type;
+    public enum AccountType {Regular, Premium};
+>>>>>>> Stashed changes
     public File ProfilePicture;
     public ArrayList<User> Friends = new ArrayList<>();
     public ArrayList<User> FriendRequests = new ArrayList<>();
@@ -49,6 +54,7 @@ public class User {
         this.Age = ob.Age;
         this.Country = ob.Country;
         this.Gender = ob.Gender;
+
     }
 
     public User(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String AccType) {
@@ -60,10 +66,17 @@ public class User {
         this.Age = age;
         this.Country = country;
         this.Gender = gender;
+<<<<<<< Updated upstream
         this.Account_Type = AccountType.valueOf(AccType);
         System.out.println(Account_Type);
     }
 
+=======
+
+        //Account_Type = User.AccountType.isValidEnum(MyEnum.class, Account_type);
+    }
+
+>>>>>>> Stashed changes
     /* If Logged in user wants to accept friend request*/
     public void AddFriends(User user) {
         if(!user.FriendRequests.contains(this)) {
@@ -80,6 +93,7 @@ public class User {
             for (User user : UserDB.SystemUsers) {
                 if (user.UserName.equals(username) && FriendRequests.contains(user)) {
                     Friends.add(user);
+                    user.Friends.add(this);
                     FriendRequests.remove(user);
                     accepted = true;
                     break;

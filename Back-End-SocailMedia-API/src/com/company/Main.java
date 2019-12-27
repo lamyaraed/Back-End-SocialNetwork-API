@@ -60,6 +60,37 @@ public class Main {
         newAcc.getPersonalInfo("lamyaraed","lamya","raed","lamyaraed24gmail","123456789",20,"Egypt",
                 "female","Premium");
 //
+<<<<<<< Updated upstream
+=======
+        User ob2 = new User("Mariam", "Makram", "mariammakram", "mariammakram@gmail.com",
+                "mariam123", 16, "Egypt", "Female", "Regular");
+
+        User ob3 = new User("Mariam", "Makram", "mariammakram2", "mariammakram@gmail.com",
+                "mariam123",16, "Egypt", "Female", "Regular");
+
+        UserDB.SystemUsers.add(ob2);
+        UserDB.SystemUsers.add(ob3);
+
+        Search sc = new Search();
+        ArrayList<User> foundUsers = new ArrayList<>();
+        foundUsers = sc.FindUser("Mariam Makram");
+        if (!foundUsers.isEmpty()) {
+            if (foundUsers.size() == 1)
+                ob.AddFriends(foundUsers.get(0));
+            else {
+                byte i = 1, choice;
+                for (User foundUser : foundUsers) {
+                    System.out.println(i + ") " + foundUser.FirstName + " " + foundUser.LastName + "   Username: " + foundUser.UserName);
+                    i++;
+                }
+                System.out.println("Choose the user you want");
+                choice = (byte) scan.nextInt();
+                ob.AddFriends(foundUsers.get(choice-1));
+                System.out.println(choice);
+
+            }
+        }
+>>>>>>> Stashed changes
 
         /*System.out.println("LogIN : ");
         System.out.println("Hello, Enter Your Data :");
