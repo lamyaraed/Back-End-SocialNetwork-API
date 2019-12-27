@@ -23,17 +23,21 @@ public class SignUp {
 
     }
 
-    public void getPersonalInfo(String username, String Firstname, String LastName, String email, String password, int age, String gender, String country, String Account_type) {
+    public boolean getPersonalInfo(String username, String Firstname, String LastName, String email, String password, int age, String gender, String country, String Account_type) {
         this.UserName = username;
         this.UserEmail = email;
         this.UserPassword = password;
         VerifyAccount();
+
         if (flag){
             UserAccount = new Account();
             UserAccount.setUserData(username,Firstname,LastName,email,password,age,gender,country,Account_type);
+            return true;
         }
         else
-            System.out.println("Invalid inputs, try again later");
+        {       System.out.println("Invalid inputs, try again later");
+                return false;
+        }
     }
 
     public Account Activate() {
@@ -49,6 +53,7 @@ public class SignUp {
             flag = false;
         else
             flag = true;
+
     }
 
     //Search For this Email in user database.
@@ -56,16 +61,18 @@ public class SignUp {
     {
         boolean emailFlag = true;
         for (int i = 0; i < 3; i++) {
-            for (User o : UserDB.SystemUsers) {
-                if (o.Email.equals(UserEmail)) {
-                    emailFlag = false;
-                    System.out.println("This Email Already Exists!");
-                    System.out.println("Re-Enter a new Email");
-                    UserEmail = input.nextLine();
-                    break;
+                for (User o : UserDB.SystemUsers)
+                {
+                    if (o.Email.equals(UserEmail) )
+                    {
+                        emailFlag = false;
+                        System.out.println("This Email Already Exists!");
+                        System.out.println("Re-Enter a new Email");
+                        UserEmail = input.nextLine();
+                        break;
+                    }
+                    emailFlag = true;
                 }
-                emailFlag = true;
-            }
         }
         if (emailFlag == false)
             return false;
