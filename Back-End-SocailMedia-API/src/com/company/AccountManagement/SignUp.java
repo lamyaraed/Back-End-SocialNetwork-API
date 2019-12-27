@@ -54,7 +54,7 @@ public class SignUp {
     //Search For this Email in user database.
     public boolean CheckEmail()
     {
-        boolean emailFlag = false;
+        boolean emailFlag = true;
         for (int i = 0; i < 3; i++) {
             for (User o : UserDB.SystemUsers) {
                 if (o.Email.equals(UserEmail)) {
@@ -76,7 +76,7 @@ public class SignUp {
 
     //Search For this username in user database.
     public boolean CheckUserName() {
-        boolean nameFlag = false;
+        boolean nameFlag = true;
         for (int j = 0; j < 3; j++) {
             for (User o : UserDB.SystemUsers) {
                 if (o.UserName.equals(UserName)) {
@@ -96,7 +96,7 @@ public class SignUp {
     }
 
     public boolean CheckPassword() {
-        boolean pswdFlag = false;
+        boolean pswdFlag = true;
         for (int j = 0; j < 3; j++) {
             if (UserName.equals(UserPassword)) {
                 pswdFlag = false;

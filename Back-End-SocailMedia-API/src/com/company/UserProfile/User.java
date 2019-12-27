@@ -73,12 +73,15 @@ public class User {
 
 
     /* If Logged in user wants to accept friend request*/
-    public void AddFriends(User user) {
+    public boolean AddFriends(User user) {
         if (!user.FriendRequests.contains(this)) {
             user.FriendRequests.add(this);
             System.out.println("Your request has been sent successfully");
-        } else
+            return true;
+        } else {
             System.out.println("Request is sent before");
+            return false;
+        }
     }
 
     /* If Logged in user wants to accept friend request*/
