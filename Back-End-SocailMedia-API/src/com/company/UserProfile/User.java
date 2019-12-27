@@ -20,7 +20,7 @@ public class User {
     public String Gender;
     public int Age;
     public String Country;
-
+    public AccountType Account_Type;
     public enum AccountType {Regular, Premium};
 
     public File ProfilePicture;
@@ -60,14 +60,9 @@ public class User {
         Age = age;
         Country = country;
         Gender = gender;
-
-        //AccountType = UserAccount.User.AccountType.isValidEnum(MyEnum.class, Account_type);
-       if(Account_Type=="Premium") {
-    	   for (User user : UserDB.SystemUsers) {
-               if (user.UserName.equals(UserName) ) {
-               	 permiumusers.add(user);
-              }
-    	   }
+        this.Account_Type = AccountType.valueOf(Account_Type);
+        if(Account_Type=="Premium") {
+           permiumusers.add(this);
         }
         UserDB.SystemUsers.add(this);
     }

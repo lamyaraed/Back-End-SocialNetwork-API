@@ -108,5 +108,8 @@ public class Main {
         Account tst = new Account();
         tst.LogIn(UserName , UserPassword);
 */
+       /* User myUser= new User("Lamya", "Raed", "LamyaRaed", "lamya@gmail.com",
+                "12345678",20, "Egypt", "Female", "Premium");
+        */
     }
 }
