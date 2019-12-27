@@ -21,7 +21,7 @@ public class User {
     public int Age;
     public String Country;
     public AccountType Account_Type;
-    public enum AccountType {Regular, Premium};
+    public static enum AccountType {Regular, Premium};
 
     public File ProfilePicture;
     public ArrayList<User> Friends = new ArrayList<>();

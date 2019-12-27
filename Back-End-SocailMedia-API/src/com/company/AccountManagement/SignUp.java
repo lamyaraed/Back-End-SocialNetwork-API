@@ -31,7 +31,7 @@ public class SignUp {
 
         if (flag){
             UserAccount = new Account();
-            UserAccount.setUserData(username,Firstname,LastName,email,password,age,gender,country,Account_type);
+            UserAccount.User=new User (username,Firstname,LastName,email,password,age,gender,country,Account_type);
             return true;
         }
         else
