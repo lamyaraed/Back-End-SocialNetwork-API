@@ -68,9 +68,13 @@ public class Account {
 
     public void UpgradeRegisterationPremiumReq() {
         PremiumAccount prem;
+        prem.Upgrade();
+        permiumusers.add(Username);
     }
 
     public void setUserData(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
         //User = new User(UserName,Firstname,LastName,UserEmail,UserPassword,age,country,gender,Account_Type);
+//    	if(Account_Type.equals("Premium"))
+//    		PremiumAccount.Upgrade();
     }
 }

@@ -26,6 +26,7 @@ public class User {
     public File ProfilePicture;
     public ArrayList<User> Friends = new ArrayList<>();
     public ArrayList<User> FriendRequests = new ArrayList<>();
+    public ArrayList<PermiumAccount>  permiumusers = new ArrayList<>();
     public boolean accepted = false;
 
 
@@ -58,6 +59,9 @@ public class User {
         Country = country;
         Gender = gender;
         //AccountType = UserAccount.User.AccountType.isValidEnum(MyEnum.class, Account_type);
+        if(Account_Type=="Premium") {
+        	permiumusers.add(this.UserName);
+        }
     }
 
 
