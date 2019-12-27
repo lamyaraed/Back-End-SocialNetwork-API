@@ -13,12 +13,10 @@ import java.util.ArrayList;
 
 public class Message {
 
-    //todo add to class diagram (parameters)
     public void SendMessage(User user, String msg) {
     }
     public void ReceiveMessage() {
     }
-    //todo add to class diagram (parameters)
     public void SendGroupMessage(ArrayList<User> Groupusers) {
     }
     public void ReceiveGroupMessage() {

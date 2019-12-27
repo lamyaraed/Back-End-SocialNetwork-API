@@ -30,12 +30,6 @@ public class User {
   
     public boolean accepted = false;
 
-
-    //todo accepted : boolean           (In user class)
-//todo acceptRequests : void        (in User class)
-//todo FriendRequests : Array<User> (in User class)
-
-
     public User() {
     }
 

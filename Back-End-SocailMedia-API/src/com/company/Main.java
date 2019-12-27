@@ -17,12 +17,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    /*
-    * UpdateUserProfilePicture(Image) , UpdateUserName(UserName) ,  UpdateAge(Integer) ,UpdatePassword(Password) , UpdateGender(Gender)
-    * UpdateEmail(Email)
-    *
-    * kolohom void
-    * */
 
     public static void main(String[] args) {
 
