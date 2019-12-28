@@ -21,7 +21,8 @@ public class User {
     public int Age;
     public String Country;
     public AccountType Account_Type;
-    public enum AccountType {Regular, Premium};
+
+    public enum AccountType {Regular, Premium}
 
     public File ProfilePicture;
     public ArrayList<User> Friends = new ArrayList<>();
@@ -86,8 +87,7 @@ public class User {
         if (accepted) {
             System.out.println("Friend request accepted successfully.");
             return true;
-        }
-        else {
+        } else {
             System.out.println("Friend request doesn't exist");
             return false;
         }
@@ -101,6 +101,10 @@ public class User {
     }
 
     public void MakeLike(Post post) {
+    }
+
+    public Post addPost(){
+        return null;
     }
 
 }
