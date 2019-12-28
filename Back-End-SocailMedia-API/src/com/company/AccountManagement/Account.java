@@ -16,37 +16,105 @@ public class Account {
     public User User;
     public static String Username;
     public static String pswd;
+    public String UserEmail;
+    public boolean flag = true;
     Scanner input = new Scanner(System.in);
+    public ManageAccount myManage;
 
     public Account() {
         //empty constructor
     }
 
-    public void Upgrade(User user) {
-        if (!user.Account_Type.equals("Premium")) {
-            System.out.println("choose the payment method");
-            System.out.println("enter 1 if you want to pay with creditcard, 2 if you want to pay with you paypal ");
-            Scanner input = new Scanner(System.in);
-            int n = input.nextInt();
-            if (n == 1) {
-                PremiumUser.PaymentMethod useMethod = PremiumUser.PaymentMethod.CreditCard;
-            } else if (n == 2) {
-                PremiumUser.PaymentMethod useMethod = PremiumUser.PaymentMethod.PayPal;
-            }
-            System.out.println("your account have been upgraded for one year by paying 99$");
-            //permiumusers.add()
-            user.Account_Type = com.company.UserProfile.User.AccountType.Premium;
-            System.out.println("if you want to create ad enter 1 , for promoting a page enter 2 , for promoting something enter 3 ");
-            n = input.nextInt();
-            if (n == 1) {
-                PremiumUser.CreateAd();
-            } else if (n == 2) {
-                PremiumUser.PromotePage();
-            } else if (n == 3) {
-                PremiumUser.PromoteSomething();
+    public boolean SignUp(String username, String Firstname, String LastName, String email, String password, int age, String gender, String country, String Account_type){
+        this.Username = username;
+        this.UserEmail = email;
+        this.pswd= password;
+        VerifyAccount();
+
+        if (flag){
+            this.User = new User(username,Firstname,LastName,email,password,age,gender,country,Account_type);
+            System.out.println("your account has been created");
+            return true;
+        }
+        else {
+            System.out.println("Invalid inputs, try again later");
+            return false;
+        }
+    }
+    //verifying user's data for signing up
+    public void VerifyAccount() {
+        if (!CheckEmail())
+            flag = false;
+        else if (!CheckUserName())
+            flag = false;
+        else if (!CheckPassword())
+            flag = false;
+        else
+            flag = true;
+    }
+    public boolean CheckEmail() {
+        boolean emailFlag = true;
+        for (int i = 0; i < 3; i++) {
+            for (User o : UserDB.SystemUsers)
+            {
+                if (o.Email.equals(UserEmail) )
+                {
+                    emailFlag = false;
+                    System.out.println("This Email Already Exists!");
+                    System.out.println("Re-Enter a new Email");
+                    UserEmail = input.nextLine();
+                    break;
+                }
+                emailFlag = true;
             }
         }
-
+        if (emailFlag == false)
+            return false;
+        else
+            return true;
+    }
+    public boolean CheckUserName() {
+        boolean nameFlag = true;
+        for (int j = 0; j < 3; j++) {
+            for (User o : UserDB.SystemUsers) {
+                if (o.UserName.equals(Username)) {
+                    nameFlag = false;
+                    System.out.println("The UserName You entered already exists!");
+                    System.out.println("Re-Enter a new Username");
+                    Username = input.nextLine();
+                    break;
+                }
+                nameFlag = true;
+            }
+        }
+        if(nameFlag == false)
+            return false;
+        else
+            return true;
+    }
+    public boolean CheckPassword() {
+        boolean pswdFlag = true;
+        for (int j = 0; j < 3; j++) {
+            if (Username.equals(pswd)) {
+                pswdFlag = false;
+                System.out.println("Your UserName should not be your Password!");
+                System.out.println("Re-Enter a new password");
+                pswd = input.nextLine();
+                break;
+            }
+            else if (pswd.length() < 8) {
+                pswdFlag = false;
+                System.out.println("Password should contain more than 8 char");
+                System.out.println("Re-Enter a new password");
+                pswd = input.nextLine();
+                break;
+            }
+            pswdFlag = true;
+        }
+        if(pswdFlag == false)
+            return false;
+        else
+            return true;
     }
 
     public String LogIn(String UserName, String Password) {
@@ -56,7 +124,6 @@ public class Account {
                 if (Password.equals(pswd)) {
                     System.out.println("Logged Successfully");
                     return "Done!!";
-                    //   break;
                 } else {
                     System.out.println("InValid Password !");
                     System.out.println("Re-Enter Password : ");
@@ -86,14 +153,15 @@ public class Account {
             } else {
                 Username = UserName;
                 pswd = o.Password;
+                User = o;
                 return true;
             }
         }
         return false;
     }
 
-
     public Account ManageAccount() {
+        myManage = new ManageAccount(this);
         return null;
     }
 

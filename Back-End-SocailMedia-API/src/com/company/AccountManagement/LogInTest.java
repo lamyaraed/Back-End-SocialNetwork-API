@@ -1,12 +1,11 @@
 package com.company.AccountManagement;
 
 import com.company.UserProfile.UserDB;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AccountTest {
+class LogInTest {
 
     @Test
     void logIn() {
@@ -16,22 +15,5 @@ class AccountTest {
         String s=  test.LogIn(username,Password);
         UserDB ob = new UserDB();
         assertEquals("Done!!",s);
-
-    }
-
-    @Test
-    void checkUserName() {
-    }
-
-    @Test
-    void manageAccount() {
-    }
-
-    @Test
-    void upgradeRegisterationPremiumReq() {
-    }
-
-    @Test
-    void setUserData() {
     }
 }

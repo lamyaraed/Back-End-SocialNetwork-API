@@ -42,18 +42,19 @@ public class User {
         this.Age = ob.Age;
         this.Country = ob.Country;
         this.Gender = ob.Gender;
+        this.Account_Type = ob.Account_Type;
         UserDB.SystemUsers.add(this);
     }
 
     public User(String UserName, String Firstname, String LastName, String UserEmail, String UserPassword, int age, String country, String gender, String Account_Type) {
         this.UserName = UserName;
-        FirstName = Firstname;
+        this.FirstName = Firstname;
         this.LastName = LastName;
-        Email = UserEmail;
-        Password = UserPassword;
-        Age = age;
-        Country = country;
-        Gender = gender;
+        this.Email = UserEmail;
+        this.Password = UserPassword;
+        this.Age = age;
+        this.Country = country;
+        this.Gender = gender;
         this.Account_Type = AccountType.valueOf(Account_Type);
         UserDB.SystemUsers.add(this);
     }
