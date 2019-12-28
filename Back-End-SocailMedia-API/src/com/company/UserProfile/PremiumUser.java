@@ -10,7 +10,11 @@ public class PremiumUser extends User {
     public Integer PaymentAmount = 99;
     public enum PaymentMethod {CreditCard, PayPal}
     Scanner input = new Scanner(System.in);
-    public PremiumUser(){
+    public User me;
+    public PremiumUser(User user){
+        this.me = user;
+    }
+    public void premiumAccountFunc(){
         System.out.println("if you want to create ad enter 1 , for promoting a page enter 2 , for promoting something enter 3, 4 to exit ");
         int n = input.nextInt();
         if (n == 1) {

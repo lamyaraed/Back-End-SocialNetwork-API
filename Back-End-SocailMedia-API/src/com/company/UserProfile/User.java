@@ -56,6 +56,10 @@ public class User {
         this.Country = country;
         this.Gender = gender;
         this.Account_Type = AccountType.valueOf(Account_Type);
+        if(Account_Type.equals("Premium"))
+            new PremiumUser(this);
+        else
+            new RegularUser(this);
         UserDB.SystemUsers.add(this);
     }
 
