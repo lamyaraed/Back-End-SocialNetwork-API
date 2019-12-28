@@ -62,12 +62,12 @@ public class ManageAccount {
                 PremiumUser.PaymentMethod useMethod = PremiumUser.PaymentMethod.CreditCard;
                 System.out.println("your account has been upgraded for one year by paying 99$");
                 this.myAccount.User.Account_Type = com.company.UserProfile.User.AccountType.Premium;
-                PremiumUser newPremium  = new PremiumUser();
+                PremiumUser newPremium  = new PremiumUser(myAccount.User);
             } else if (n == 2) {
                 PremiumUser.PaymentMethod useMethod = PremiumUser.PaymentMethod.PayPal;
                 System.out.println("your account has been upgraded for one year by paying 99$");
                 this.myAccount.User.Account_Type = com.company.UserProfile.User.AccountType.Premium;
-                PremiumUser newPremium  = new PremiumUser();
+                PremiumUser newPremium  = new PremiumUser(myAccount.User);
             }else if(n ==3)
                 return;
         }
