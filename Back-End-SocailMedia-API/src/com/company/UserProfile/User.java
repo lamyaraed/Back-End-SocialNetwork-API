@@ -26,15 +26,8 @@ public class User {
     public File ProfilePicture;
     public ArrayList<User> Friends = new ArrayList<>();
     public ArrayList<User> FriendRequests = new ArrayList<>();
-    public  ArrayList<User>  permiumusers = new ArrayList<>();
-  
+
     public boolean accepted = false;
-
-
-    //todo accepted : boolean           (In user class)
-//todo acceptRequests : void        (in User class)
-//todo FriendRequests : Array<User> (in User class)
-
 
     public User() {
     }
@@ -61,9 +54,6 @@ public class User {
         Country = country;
         Gender = gender;
         this.Account_Type = AccountType.valueOf(Account_Type);
-        if(Account_Type=="Premium") {
-           permiumusers.add(this);
-        }
         UserDB.SystemUsers.add(this);
     }
 

@@ -21,6 +21,37 @@ public class Account {
         //empty constructor
     }
 
+    public  void Upgrade( User user) {
+        if(!user.Account_Type.equals("Premium"))
+        {
+            System.out.println("choose the payment method");
+            System.out.println("enter 1 if you want to pay with creditcard, 2 if you want to pay with you paypal ");
+            Scanner input = new Scanner(System. in);
+            int n=input.nextInt();
+            if(n==1) {
+                PremiumAccount.PaymentMethod useMethod = PremiumAccount.PaymentMethod.CreditCard;
+            }
+            else if(n==2) {
+                PremiumAccount.PaymentMethod useMethod = PremiumAccount.PaymentMethod.PayPal;
+            }
+            System.out.println("your account have been upgraded for one year by paying 99$");
+            //permiumusers.add()
+            user.Account_Type = com.company.UserProfile.User.AccountType.Premium;
+            System.out.println("if you want to create ad enter 1 , for promoting a page enter 2 , for promoting something enter 3 ");
+            n=input.nextInt();
+            if (n==1) {
+                PremiumAccount.CreateAd();
+            }
+            else if (n==2) {
+                PremiumAccount.PromotePage();
+            }
+            else if (n==3) {
+                PremiumAccount.PromoteSomething();
+            }
+        }
+
+    }
+
     public String LogIn(String UserName, String Password) {
         //1-check existance of this username if yes ... check if password right
         for (int i = 0; i < 3; i++) {
@@ -70,13 +101,7 @@ public class Account {
     }
 
     public  void UpgradeRegisterationPremiumReq() {
-        PremiumAccount prem = null;
-        prem.Upgrade();
-      //  permiumusers.add(User);
-        for (User user : UserDB.SystemUsers) {
-            if (user.UserName.equals(Username) ) {
-            	 User.permiumusers.add(user);
-           }
-        }
+
     }
+
 }
