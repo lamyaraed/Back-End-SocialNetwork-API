@@ -53,7 +53,7 @@ public class ManageAccount {
         }
     }
     public void Upgrade() {
-        if (!this.myAccount.User.Account_Type.equals("Premium")) {
+        if (!this.myAccount.User.Account_Type.equals(User.AccountType.Premium)) {
             System.out.println("choose the payment method");
             System.out.println("enter 1 if you want to pay with credit card, 2 if you want to pay with you pay pal, 3 to exit");
             Scanner input = new Scanner(System.in);
@@ -70,6 +70,9 @@ public class ManageAccount {
                 PremiumUser newPremium  = new PremiumUser(myAccount.User);
             }else if(n ==3)
                 return;
+        }
+        else{
+            System.out.println("You're already enjoying a premium account");
         }
     }
 
